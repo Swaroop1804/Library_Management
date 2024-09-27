@@ -17,4 +17,11 @@ export class Library {
       book.available = false;
     }
   }
+
+  returnBook(isbn: string): void {
+    const book = this.books.find(book => book.isbn === isbn && !book.available);
+    if (book) {
+      book.available = true; // Mark the book as available
+    }
+  }
 }
